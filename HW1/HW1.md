@@ -12,7 +12,7 @@
 ## Задание 2
 Выведите название, производителя и цену для товаров, количество которых превышает 2.
 
-**SELECT brand, model, price FROM hw1.phones WHERE quantity > 2;**
+**SELECT model, brand, price FROM hw1.phones WHERE quantity > 2;**
 ![HW1_2](2.jpg)
 
 ## Задание 3
