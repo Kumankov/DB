@@ -12,7 +12,7 @@ ORDER BY salary DESC;
 SELECT * FROM staff
 ORDER BY salary;
 
-
+![HW3_1](1.jpg)
 
 ## Выведите 5 максимальных заработных плат (saraly).
 
