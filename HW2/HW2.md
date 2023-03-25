@@ -1,6 +1,6 @@
-#ДЗ2
+# ДЗ2
 
-##Используя операторы языка SQL, создайте табличку “sales”. Заполните ее данными.
+## Используя операторы языка SQL, создайте табличку “sales”. Заполните ее данными.
 
 CREATE TABLE sales (id INT AUTO_INCREMENT PRIMARY KEY, date date not null, product char(15) not null, quantity int default 1);
 
@@ -12,7 +12,7 @@ values ('2023-02-10', 'bread', 100), ('2023-02-10', 'sause', 150),('2023-02-11',
 ![HW2_1](1.2.jpg)
 ![HW2_1](1.3.jpg)
 
-##Сгруппируйте значения количества в 3 сегмента — меньше 100, 100-300 и больше 300.
+## Сгруппируйте значения количества в 3 сегмента — меньше 100, 100-300 и больше 300.
 
 SELECT 
     CASE
@@ -26,7 +26,7 @@ GROUP BY segment;
 
 ![HW2_2](2.jpg)
 
-##Создайте таблицу “orders”, заполните ее значениями. Покажите “полный” статус заказа, используя оператор CASE
+## Создайте таблицу “orders”, заполните ее значениями. Покажите “полный” статус заказа, используя оператор CASE
 
 CREATE TABLE orders (id INT AUTO_INCREMENT PRIMARY KEY, customer_name VARCHAR(50) NOT NULL, order_date DATE NOT NULL, total_amount DECIMAL(10,2) NOT NULL, status VARCHAR(20) NOT NULL);
 
@@ -46,6 +46,6 @@ FROM orders;
 
 ![HW2_3](3.jpg)
 
-##Чем NULL отличается от 0?
+## Чем NULL отличается от 0?
 
 NULL - это отсутвие данных, а 0 - это числовые данные, равные 0.
