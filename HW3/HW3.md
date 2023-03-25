@@ -2,11 +2,15 @@
 
 ## Отсортируйте данные по полю заработная плата (salary) в порядке: убывания; возрастания.
 
-SELECT * FROM staff
-ORDER BY salary;
+**Убывания**
 
 SELECT * FROM staff
 ORDER BY salary DESC;
+
+**Возрастания**
+
+SELECT * FROM staff
+ORDER BY salary;
 
 ![HW3_1](1.jpg)
 
