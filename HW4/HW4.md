@@ -35,17 +35,18 @@ SET @var_id := 1;
 
 **Выберем пользователя с id =1**
 
-SELECT m.from_user_id, CONCAT(u1.firstname, ' ', u1.lastname) AS 'Имя', COUNT(*) as 'кол-во сообщений'
+SELECT m.from_user_id, CONCAT(u1.firstname, ' ', u1.lastname) AS name , COUNT(*) as count_messages
 FROM users u
-INNER JOIN friend_requests f ON u.id = f.initiator_user_id 
-INNER JOIN messages m ON f.target_user_id = m.from_user_id 
+INNER JOIN friend_requests f ON u.id = f.initiator_user_id
+INNER JOIN messages m ON f.target_user_id = m.from_user_id
 INNER JOIN users u1 ON m.from_user_id = u1.id WHERE f.status = 'approved' AND u.id = @var_id 
 GROUP BY m.from_user_id
-UNION SELECT m.from_user_id, CONCAT(u1.firstname, ' ', u1.lastname) AS 'Имя', COUNT(*) as 'кол-во сообщений'
+UNION SELECT m.from_user_id, CONCAT(u1.firstname, ' ', u1.lastname) AS name, COUNT(*) as count_messages
 FROM users u 
 INNER JOIN friend_requests f ON u.id = f.target_user_id
 INNER JOIN messages m ON f.initiator_user_id = m.from_user_id 
 INNER JOIN users u1 ON m.from_user_id = u1.id WHERE f.status = 'approved' AND u.id = @var_id 
-GROUP BY m.from_user_id;
+GROUP BY m.from_user_id 
+ORDER BY count_messages DESC LIMIT 1;
 
 ![HW4_4](4.jpg)
